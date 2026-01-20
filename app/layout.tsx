@@ -8,26 +8,8 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "BreathViz AI - 呼吸音診断支援アプリケーション",
-  description: "AIを活用した呼吸音の可視化・分類・学習システム。Give your ears the eyes of AI.",
-  generator: "v0.app",
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
-  },
+  title: "BreathVizAI-HP",
+  description: "呼吸音診断支援アプリケーション",
 }
 
 export default function RootLayout({
@@ -36,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ja">
+    <html lang="ja" suppressHydrationWarning>
       <body className={`font-sans antialiased`}>
         {children}
         <Analytics />
