@@ -65,10 +65,8 @@ export const ja = {
         label: "Team",
         title: "開発チーム",
         members: [
-          { name: "田中 健太", role: "CEO / AI Researcher", image: "T" },
-          { name: "山田 美咲", role: "CTO / Engineer", image: "Y" },
-          { name: "佐藤 翔太", role: "Medical Advisor", image: "S" },
-          { name: "鈴木 愛", role: "UX Designer", image: "S" },
+          { name: "大島 龍晟", role: "Backend Engineer", image: "T" },
+          { name: "十河 伶衣", role: "Frontend Engineer", image: "Y" },
         ],
       },
       news: {

@@ -46,7 +46,7 @@ export function NewsSection() {
 
   return (
     <>
-      <section id="news" data-section="4" className="relative min-h-screen bg-[#1a1a1a] dark">
+      <section id="news" data-section="4" className="relative min-h-screen bg-[#2f4f4f] dark">
         <div className="mx-auto max-w-7xl px-6 py-32">
           <AnimatedSection>
             <p className="mb-20 text-sm font-medium uppercase tracking-[0.3em] text-white/40">
