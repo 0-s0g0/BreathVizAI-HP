@@ -26,11 +26,11 @@ export function MainSection() {
               <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-[#0a1a1f]/50">
                 {t(tKeys.hero.subtitle)}
               </p>
-              <h1 className="mb-8 text-5xl font-light leading-[1.1] tracking-tight text-[#0a1a1f] md:text-6xl lg:text-7xl">
-                <span className="block">{t(tKeys.hero.catchphrase)}</span>
-                <span className="block">{t(tKeys.hero.catchphrase2)}</span>
-                <span className="block text-teal-600">{t(tKeys.hero.catchphrase3)}</span>
-              </h1>
+              <div className="mb-8 text-5xl font-light leading-[1.1] tracking-tight text-[#0a1a1f] ">
+                <div className="block md:text-6xl lg:text-7xl mb-5 text-teal-600">{t(tKeys.hero.catchphrase)}</div>
+                <div className="block md:text-3xl lg:text-4xl mb-5">{t(tKeys.hero.catchphrase2)}</div>
+                <div className="block md:text-xl lg:text-xl mb-5">{t(tKeys.hero.catchphrase3)}</div>
+              </div>
               <div className="flex flex-wrap gap-4">
                 <a
                   href="#"
@@ -39,13 +39,6 @@ export function MainSection() {
                 >
                   <Play className="h-4 w-4" />
                   {t(tKeys.nav.launch)}
-                </a>
-                <a
-                  href="#features"
-                  data-hover
-                  className="inline-flex items-center gap-2 rounded-full border-2 border-[#0a1a1f]/20 bg-transparent px-8 py-4 text-sm font-medium text-[#0a1a1f] transition-all hover:border-[#0a1a1f]/40"
-                >
-                  {t(tKeys.hero.tryDemo)}
                 </a>
               </div>
             </AnimatedSection>

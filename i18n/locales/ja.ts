@@ -10,10 +10,10 @@ export const ja = {
       },
 hero: {
         title: "BreathViz AI",
-        subtitle: "次世代 呼吸音モニタリング・プラットフォーム", // 診断支援→モニタリングへ
+        subtitle: "次世代 呼吸音モニタリング・プラットフォーム", 
         catchphrase: "BreathViz AI",
-        catchphrase2: "熟練の「耳」を、すべての現場に", // 耳に見えない音→わずかな変化（早期発見を想起）
-        catchphrase3: "AIによる自動解析で、バイタルチェックの記録を劇的に効率化",
+        catchphrase2: "熟練の「耳」を、すべての現場に", 
+        catchphrase3: "日常の呼吸音を電子収音デバイスで録音するだけで、AIによる自動解析を利用できます。バイタルチェックの記録業務を効率化し、呼吸器疾患の早期発見を支えます。",
         tryDemo: "デモを試す",
       },
       mission: {

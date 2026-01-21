@@ -3,12 +3,27 @@
 import { AnimatedSection } from "@/app/Animation/AnimationSection"
 import { useTranslation } from "react-i18next"
 import { tKeys } from "@/i18n/keys"
+import Image from "next/image"
 
 export function MissionSection() {
   const { t } = useTranslation()
 
   return (
     <section data-section="1" className="relative min-h-screen overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/MIssionBack.jpg"
+          alt="Mission Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </div>
+
+      {/* Semi-transparent color overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0a1a1f]/80 via-teal-900/70 to-[#0a1a1f]/80" />
+
       {/* Animated breathing circles */}
       <div className="absolute inset-0 flex items-center justify-center">
         {[...Array(5)].map((_, i) => (
