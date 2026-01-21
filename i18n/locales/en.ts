@@ -82,28 +82,28 @@ export const en = {
             "image": "/news/news5.png"
         },
         {
-            "date": "2025.12.05",
+            "date": "2025.12.11",
             "tag": "Event",
             "title": "Spoke at ROCKET PITCH NIGHT FUKUOKA 2025",
             "detail": "Presented BreathViz AI during the student session at Fukuoka's premier pitch event. Received invaluable feedback, validating our product-market fit and the social impact of our technology.",
             "image": "/news/news4.png"
         },
         {
-            "date": "2025.10.15",
+            "date": "2025.11.30",
             "tag": "Award",
             "title": "Winner of Grand Prize at Geekten 2025",
             "detail": "Achieved the highest honor, the Grand Prize, along with the WingArc1st Corporate Award at Japan's largest student tech exhibition.",
             "image": "/news/news3.png"
         },
         {
-            "date": "2025.08.10",
+            "date": "2025.11.16",
             "tag": "Event",
             "title": "Participated in Geeks Camp Fukuoka Hackathon",
             "detail": "I participated in the “Geeks Camp” held at the Fukuoka venue. I interacted with many engineers, employees, and students, and received a lot of feedback on our product.",
             "image": "/news/news2.png"
         },
         {
-            "date": "2025.06.30",
+            "date": "2025.09.28",
             "tag": "Award",
             "title": "JunctionX Kyutech 2025 - 2nd Prize Winners",
             "detail": "Secured the 2nd Prize at the international hackathon held at Kyushu Institute of Technology. Delivered a technical demo and pitch in English, gaining international recognition for our innovative approach to healthcare AI.",

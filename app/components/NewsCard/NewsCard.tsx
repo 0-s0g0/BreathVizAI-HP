@@ -57,7 +57,7 @@ export function NewsCard({ item, onClick }: NewsCardProps) {
         <div className="relative flex items-center justify-center">
           {/* 菱形本体 */}
           <div 
-            className={`h-14 w-14 rotate-45 transform transition-all duration-500 group-hover:rotate-[225deg] ${getTagBgColor(item.tag)} ring-[3px] ring-white dark:ring-[#1a1a1a]`}
+            className={`h-14 w-14 rotate-45 transform transition-all duration-500 group-hover:rotate-[225deg] ${getTagBgColor(item.tag)} ring-[3px] ring-white dark:ring-[#2f4f4f]`}
           />
           {/* テキスト：菱形に合わせて小さめに、かつ水平に */}
           <span className="absolute inset-0 flex items-center justify-center text-[9px] font-black text-white uppercase tracking-tighter pointer-events-none">

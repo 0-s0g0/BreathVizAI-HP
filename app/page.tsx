@@ -1,21 +1,11 @@
 "use client"
-
-import React from "react"
-
 import { useState, useEffect, useRef, useCallback } from "react"
 import {en} from "../i18n/locales/en"
 import {ja} from "../i18n/locales/ja"
 import { Header } from "./components/Header/Header"
 import { LoadingScreen } from "./components/Loading/Loading"
 import { CustomCursor } from "./components/cursor/cursol"
-import { MainSection } from "./Section/Main/main"
-import { MissionSection } from "./Section/Main/MissionSection"
-import { FeaturesSection } from "./Section/Main/FeaturesSection"
-import { HowToSection } from "./Section/Main/HowToSection"
-import { NewsSection } from "./Section/Main/NewsSection"
-import { TeamSection } from "./Section/Main/TeamSection"
-import { FaqSection } from "./Section/Main/FaqSection"
-import { ContactSection } from "./Section/Main/ContactSection"
+import { MainSection,MissionSection,FeaturesSection, HowToSection, NewsSection, TeamSection, FaqSection, ContactSection } from "./Section/index"
 import { Footer } from "./components/Footer/Footer"
 import "@/i18n/config"
 import i18n from "@/i18n/config"
@@ -83,7 +73,7 @@ export default function HomePage() {
       <div 
         className="fixed inset-0 -z-10 transition-colors duration-1000" 
         style={{
-          backgroundColor: activeSection === 1 ? "#2f4f4f" : activeSection === 4 ? "#1a1a1a" : "#fafafa"
+          backgroundColor: activeSection === 1 ? "#2f4f4f" : activeSection === 4 ? "#1a1a1a" : "#2f4f4f"
         }} 
       />
 
