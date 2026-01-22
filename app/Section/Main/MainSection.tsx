@@ -26,14 +26,14 @@ export function MainSection() {
               <p className="mb-6 text-sm font-medium uppercase tracking-[0.2em] text-[#0a1a1f]/50">
                 {t(tKeys.hero.subtitle)}
               </p>
-              <div className="mb-8 text-5xl font-light leading-[1.1] tracking-tight text-[#0a1a1f] ">
-                <div className="block md:text-6xl lg:text-7xl mb-5 text-teal-600">{t(tKeys.hero.catchphrase)}</div>
-                <div className="block md:text-3xl lg:text-4xl mb-5">{t(tKeys.hero.catchphrase2)}</div>
+              <div className="mb-8  font-light leading-[1.1] tracking-tight text-[#0a1a1f] ">
+                <div className="block text-6xl md:text-6xl lg:text-7xl mb-5 text-teal-600">{t(tKeys.hero.catchphrase)}</div>
+                <div className="block md:text-xl lg:text-4xl mb-5">{t(tKeys.hero.catchphrase2)}</div>
                 <div className="block md:text-xl lg:text-xl mb-5">{t(tKeys.hero.catchphrase3)}</div>
               </div>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="#"
+                  href="https://breathviz-ai.vercel.app/"
                   data-hover
                   className="inline-flex items-center gap-2 rounded-full bg-[#0a1a1f] px-8 py-4 text-sm font-medium text-white transition-transform hover:scale-105"
                 >

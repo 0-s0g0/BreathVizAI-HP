@@ -65,7 +65,7 @@ export function Header({ language, setLanguage, isDarkSection, navItems, launchT
             {language === "ja" ? "EN" : "JP"}
           </button>
           <a
-            href="#"
+            href="https://breathviz-ai.vercel.app/"
             data-hover
             className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-500 ${
               isDarkSection
