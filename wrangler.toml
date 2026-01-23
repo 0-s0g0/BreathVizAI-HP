@@ -1,8 +1,0 @@
-name = "breathvizai-hp"  # 小文字に変更
-compatibility_date = "2026-01-16"
-
-# Pages用ではなく Workers としてデプロイする場合の指定
-main = ".vercel/output/static/_worker.js"
-
-[vars]
-# 必要に応じて環境変数をここに書く
