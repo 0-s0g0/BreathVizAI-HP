@@ -1,8 +1,8 @@
 name = "breathvizai-hp"  # 小文字に変更
-compatibility_date = "2025-01-23"
+compatibility_date = "2026-01-16"
 
-# これはWranglerに静的ファイルの場所を伝えます
-pages_build_output_dir = "public"
+# Pages用ではなく Workers としてデプロイする場合の指定
+main = ".vercel/output/static/_worker.js"
 
-[site]
-bucket = "./public"
+[vars]
+# 必要に応じて環境変数をここに書く
