@@ -63,10 +63,10 @@ export const en = {
   },
   team: {
     label: "Team",
-    title: "Development Team",
+    title: "Development Team : KamiLab",
     members: [
-      { name: "Ryusei Oshima", role: "Backend Engineer", image: "T" },
-      { name: "Rei Sogo", role: "Frontend Engineer", image: "Y" },
+      { name: "Ryusei Oshima", role: "Backend Engineer", image: "/icons/Ryu.jpg", xUrl: "https://x.com/o4_ryu5ei" },
+      { name: "Rei Sogo", role: "Frontend Engineer", image: "/icons/Rei.jpg", xUrl: "https://x.com/0_s0g0" },
     ],
   },
   news: {

@@ -42,7 +42,7 @@ export function NewsSection() {
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null)
 
   const newsData = t(tKeys.news.items, { returnObjects: true }) as readonly NewsItem[]
-  const displayNews = newsData.slice(0, 4) // 最初の4件のみ表示
+  const displayNews = newsData.slice(0, 4) // 最初の8件のみ表示
 
   return (
     <>
@@ -54,7 +54,7 @@ export function NewsSection() {
             </p>
           </AnimatedSection>
 
-          <div className="grid gap-8 md:grid-cols-4">
+          <div className="grid gap-8 grid-cols-2 md:grid-cols-4">
             {displayNews.map((item, index) => (
               <AnimatedSection key={index} delay={index * 100}>
                 <NewsCard
