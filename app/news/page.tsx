@@ -1,12 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { tKeys } from "@/i18n/keys"
 import { NewsCard } from "@/app/components/NewsCard/NewsCard"
 import { AnimatedSection } from "@/app/Animation/AnimationSection"
-import { ArrowLeft } from "lucide-react"
-import Link from "next/link"
 import Image from "next/image"
 import {
   Dialog,
@@ -16,6 +14,10 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 import "@/i18n/config"
+import i18n from "@/i18n/config"
+import { Header } from "../components/Header/Header"
+import { en } from "@/i18n/locales/en"
+import { ja } from "@/i18n/locales/ja"
 
 type NewsItem = {
   readonly date: string
@@ -42,6 +44,28 @@ export default function NewsPage() {
   const { t } = useTranslation()
   const [selectedTag, setSelectedTag] = useState<string>("All")
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null)
+  const [language, setLanguage] = useState<"ja" | "en">("ja")
+
+  // i18nextの言語を同期
+  useEffect(() => {
+    i18n.changeLanguage(language)
+  }, [language])
+
+  const translations = {
+    en,
+    ja,
+  }
+
+  const content = translations[language]
+
+  const navItems = [
+    { href: "/#features", label: content.nav.features },
+    { href: "/#howto", label: content.nav.howto },
+    { href: "/#team", label: content.nav.team },
+    { href: "/#news", label: content.nav.news },
+    { href: "/#faq", label: content.nav.faq },
+    { href: "/#contact", label: content.nav.contact },
+  ]
 
   const newsData = t(tKeys.news.items, { returnObjects: true }) as readonly NewsItem[]
 
@@ -54,19 +78,14 @@ export default function NewsPage() {
 
   return (
     <>
-      <div className="min-h-screen bg-[#fafafa]">
-        {/* Header */}
-        <header className="sticky top-0 z-50 border-b border-[#0a1a1f]/5 bg-white/80 backdrop-blur-md">
-          <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-sm font-medium text-[#0a1a1f]/60 transition-colors hover:text-[#0a1a1f]"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              ホームに戻る
-            </Link>
-          </div>
-        </header>
+      <Header
+        language={language}
+        setLanguage={setLanguage}
+        isDarkSection={false}
+        navItems={navItems}
+        launchText={content.nav.launch}
+      />
+      <div className="min-h-screen bg-[#fafafa] pt-20">
 
         <div className="mx-auto max-w-7xl px-6 py-16">
           {/* ページタイトル */}
@@ -96,7 +115,7 @@ export default function NewsPage() {
           </AnimatedSection>
 
           {/* ニュースグリッド */}
-          <div className="grid gap-8 md:grid-cols-3 lg:grid-cols-4">
+          <div className="grid gap-8 grid-cols-2  md:grid-cols-3 lg:grid-cols-4">
             {filteredNews.map((item, index) => (
               <AnimatedSection key={index} delay={index * 50}>
                 <div className="h-full">
