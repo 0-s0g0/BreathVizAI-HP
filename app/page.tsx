@@ -55,13 +55,14 @@ export default function HomePage() {
     { href: "#contact", label: content.nav.contact },
   ]
 
+/*
   const handleLoadingComplete = useCallback(() => {
     setIsLoading(false)
   }, [])
 
   if (isLoading) {
     return <LoadingScreen onComplete={handleLoadingComplete} />
-  }
+  }*/
 
   const isDarkSection = activeSection === 1 || activeSection === 4
 
