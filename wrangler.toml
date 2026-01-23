@@ -1,0 +1,8 @@
+name = "breathvizai-hp"  # 小文字に変更
+compatibility_date = "2025-01-23"
+
+# これはWranglerに静的ファイルの場所を伝えます
+pages_build_output_dir = "public"
+
+[site]
+bucket = "./public"
