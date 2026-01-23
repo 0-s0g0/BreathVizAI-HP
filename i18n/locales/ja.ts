@@ -63,10 +63,10 @@ hero: {
       },
       team: {
         label: "Team",
-        title: "開発チーム",
+        title: "開発チーム : カミラボ",
         members: [
-          { name: "大島 龍晟", role: "Backend Engineer", image: "T" },
-          { name: "十河 伶衣", role: "Frontend Engineer", image: "Y" },
+          { name: "大島 龍晟", role: "Backend Engineer", image: "/icons/Ryu.jpg", xUrl: "https://x.com/o4_ryu5ei" },
+          { name: "十河 伶衣", role: "Frontend Engineer", image: "/icons/Rei.jpg", xUrl: "https://x.com/0_s0g0" },
         ],
       },
       news: {
