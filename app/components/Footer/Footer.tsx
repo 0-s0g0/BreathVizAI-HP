@@ -1,6 +1,7 @@
 "use client"
 
-import { AudioWaveform as Waveform, Globe } from "lucide-react"
+import Image from "next/image"
+import { Globe } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { tKeys } from "@/i18n/keys"
 
@@ -16,8 +17,13 @@ export function Footer({ language, setLanguage }: FooterProps) {
     <footer className="border-t border-[#0a1a1f]/5 bg-[#fafafa] py-12">
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 sm:flex-row">
         <div className="flex items-center gap-3">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[#0a1a1f]">
-            <Waveform className="h-5 w-5 text-white" />
+          <div className="flex h-9 w-9 items-center justify-center rounded-lg ">
+            <Image
+              src="/breathvizai.svg"
+              alt="BreathViz AI Logo"
+              width={20}
+              height={20}
+            />
           </div>
           <span className="text-lg font-semibold text-[#0a1a1f]">BreathViz AI</span>
         </div>

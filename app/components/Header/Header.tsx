@@ -2,7 +2,8 @@
 
 import React from "react"
 import Link from "next/link"
-import { Menu, X, AudioWaveform as Waveform, Globe } from "lucide-react"
+import Image from "next/image"
+import { Menu, X, Globe } from "lucide-react"
 
 interface NavItem {
   href: string
@@ -26,12 +27,15 @@ export function Header({ language, setLanguage, isDarkSection, navItems, launchT
     }`}>
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
         <Link href="/" className="flex items-center gap-3" data-hover>
-          <div className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-500 ${
-            isDarkSection ? "bg-white" : "bg-[#0a1a1f]"
+          <div className={`flex h-9 w-9 items-center justify-center rounded-lg transition-colors duration-500 bg-white" "
           }`}>
-            <Waveform className={`h-5 w-5 transition-colors duration-500 ${
-              isDarkSection ? "text-[#0a1a1f]" : "text-white"
-            }`} />
+            <Image
+              src="/breathvizai.svg"
+              alt="BreathViz AI Logo"
+              width={20}
+              height={20}
+              className="transition-colors duration-500"
+            />
           </div>
           <span className={`text-lg font-semibold tracking-tight transition-colors duration-500 ${
             isDarkSection ? "text-white" : "text-[#0a1a1f]"
