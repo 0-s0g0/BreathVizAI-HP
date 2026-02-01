@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { Resend } from 'resend'
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+// Cloudflare Pages requires Edge Runtime
+export const runtime = 'edge'
 
 export async function POST(request: NextRequest) {
   try {
@@ -29,31 +29,40 @@ export async function POST(request: NextRequest) {
 
     console.log('Attempting to send email via Resend...')
 
-    // Resendでメール送信
+    // Resend API を直接呼び出し（Edge Runtime対応）
     const contactEmail = process.env.CONTACT_EMAIL || 'info@0-s0g0.com'
-    const { data, error } = await resend.emails.send({
-      from: 'BreathVizAI お問い合わせ <noreply@0-s0g0.com>',
-      to: [contactEmail],
-      replyTo: email,
-      subject: `【お問い合わせ】${organization ? `${organization} - ` : ''}${name}様より`,
-      html: `
-        <h2>新しいお問い合わせが届きました</h2>
-        <p><strong>お名前:</strong> ${name}</p>
-        <p><strong>メールアドレス:</strong> ${email}</p>
-        ${organization ? `<p><strong>組織名:</strong> ${organization}</p>` : ''}
-        <h3>メッセージ:</h3>
-        <p>${message.replace(/\n/g, '<br>')}</p>
-      `,
+    const response = await fetch('https://api.resend.com/emails', {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        from: 'BreathVizAI お問い合わせ <noreply@0-s0g0.com>',
+        to: [contactEmail],
+        reply_to: email,
+        subject: `【お問い合わせ】${organization ? `${organization} - ` : ''}${name}様より`,
+        html: `
+          <h2>新しいお問い合わせが届きました</h2>
+          <p><strong>お名前:</strong> ${name}</p>
+          <p><strong>メールアドレス:</strong> ${email}</p>
+          ${organization ? `<p><strong>組織名:</strong> ${organization}</p>` : ''}
+          <h3>メッセージ:</h3>
+          <p>${message.replace(/\n/g, '<br>')}</p>
+        `,
+      }),
     })
 
-    if (error) {
+    if (!response.ok) {
+      const error = await response.json()
       console.error('Resend error:', error)
       return NextResponse.json(
         { error: 'Failed to send email', details: error },
-        { status: 500 }
+        { status: response.status }
       )
     }
 
+    const data = await response.json()
     console.log('Email sent successfully:', data)
 
     return NextResponse.json(
