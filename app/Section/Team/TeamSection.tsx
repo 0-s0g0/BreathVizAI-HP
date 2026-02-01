@@ -29,7 +29,7 @@ export function TeamSection() {
           </h2>
         </AnimatedSection>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        <div className="grid gap-8 grid-cols-2 ">
           {teamData.map((member, index) => (
             <AnimatedSection key={member.name} delay={index * 100}>
               <div data-hover className="group text-center">
@@ -42,6 +42,7 @@ export function TeamSection() {
                   />
                 </div>
                 <h3 className="mb-1 text-lg font-semibold text-[#0a1a1f]">{member.name}</h3>
+                
                 <p className="mb-4 text-sm text-[#0a1a1f]/60">{member.role}</p>
                 <div className="flex justify-center gap-3">
                   <a

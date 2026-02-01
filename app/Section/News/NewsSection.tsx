@@ -56,7 +56,7 @@ export function NewsSection() {
             </p>
           </AnimatedSection>
 
-          <div className="grid gap-8 grid-cols-2 md:grid-cols-4">
+          <div className="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:gap-8">
             {displayNews.map((item, index) => (
               <AnimatedSection key={index} delay={index * 100}>
                 <NewsCard
