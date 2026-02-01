@@ -73,18 +73,18 @@ hero: {
         label: "News",
         items: [
         {
-            "date": "2026.01.20",
+            "date": "2026.01.13",
             "tag": "Release",
             "title": "BreathViz AI 公式サイトを公開しました",
             "detail": "BreathViz AIのプロジェクトサイトを公開。深層学習を用いた呼吸音解析のデモや、今後の展開について掲載しています。私たちが目指す未来の体験をぜひご覧ください。",
-            "image": "/news/news5.png"
+            "image": "/news/news7.png"
         },
         {
-            "date": "2026.01.20",
-            "tag": "Release",
-            "title": "BreathViz AI 公式サイトを公開しました",
-            "detail": "BreathViz AIのプロジェクトサイトを公開。深層学習を用いた呼吸音解析のデモや、今後の展開について掲載しています。私たちが目指す未来の体験をぜひご覧ください。",
-            "image": "/news/news5.png"
+            "date": "2026.01.19",
+            "tag": "Adoption",
+            "title": "学内事業助成金制度に採択されました",
+            "detail": "九工大発スタートアップ創出に向けた事業開発用PreGAPファンド助成金制度に採択されました。今後の開発資金として活用し、プロダクトの品質向上と機能拡充を図ってまいります。",
+            "image": "/news/news6.png"
         },
         {
             "date": "2025.12.11",

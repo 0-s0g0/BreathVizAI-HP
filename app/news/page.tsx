@@ -32,9 +32,11 @@ const getTagColor = (tag: string) => {
     case "Release":
       return "border-teal-400/30 text-teal-400 bg-teal-400/10"
     case "Award":
-      return "border-amber-400/30 text-amber-400 bg-amber-400/10"
+      return "border-orange-400/30 text-orange-400 bg-orange-400/10"
     case "Event":
       return "border-purple-400/30 text-purple-400 bg-purple-400/10"
+    case "Adoption":
+      return "border-amber-400/30 text-amber-400 bg-amber-400/10"
     default:
       return "border-teal-400/30 text-teal-400 bg-teal-400/10"
   }

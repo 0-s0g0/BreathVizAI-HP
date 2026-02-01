@@ -80,6 +80,13 @@ export const en = {
         image: "/news/news5.png"
       },
       {
+        date: "2026.01.19",
+        tag: "Adoption",
+        title: "Selected for University Startup Grant Program",
+        detail: "We have been selected for the PreGAP Fund Grant Program for business development aimed at creating startups from Kyutech. The funds will be used for future development to improve product quality and expand functionality.",
+        image: "/news/news6.png"
+      },
+      {
         date: "2025.12.11",
         tag: "Event",
         title: "Presented at ROCKET PITCH NIGHT FUKUOKA 2025",

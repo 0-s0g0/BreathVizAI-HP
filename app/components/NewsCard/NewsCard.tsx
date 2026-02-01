@@ -23,9 +23,11 @@ const getTagBgColor = (tag: string) => {
     case "Release":
       return "bg-teal-500"
     case "Award":
-      return "bg-amber-500"
+      return "bg-orange-400"
     case "Event":
       return "bg-purple-500"
+    case "Adoption":
+      return "bg-amber-500"
     default:
       return "bg-slate-600"
   }
