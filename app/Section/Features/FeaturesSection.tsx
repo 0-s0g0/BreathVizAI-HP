@@ -1,17 +1,9 @@
 "use client"
 
 import { AnimatedSection } from "@/app/Animation/AnimationSection"
-import { ImageIcon, Brain, GraduationCap } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { tKeys } from "@/i18n/keys"
-import type { LucideIcon } from "lucide-react"
-
-// Icon mapping
-const iconMap: Record<string, LucideIcon> = {
-  ImageIcon,
-  Brain,
-  GraduationCap,
-}
+import Image from "next/image"
 
 export function FeaturesSection() {
   const { t } = useTranslation()
@@ -36,7 +28,7 @@ export function FeaturesSection() {
 
         <div className="space-y-32">
           {featuresData.map((feature, index) => {
-            const Icon = iconMap[feature.icon]
+            const imagePath = `/Features/Features${feature.number}.svg`
             return (
               <AnimatedSection key={feature.number} delay={index * 150}>
                 <div
@@ -59,13 +51,16 @@ export function FeaturesSection() {
                     </p>
                   </div>
                   <div
-                    className={`relative aspect-[4/3] overflow-hidden rounded-3xl bg-gradient-to-br from-teal-100 to-teal-50 ${
+                    className={`relative aspect-[4/3] overflow-hidden rounded-3xl  ${
                       index % 2 === 1 ? "lg:col-start-1 lg:row-start-1" : ""
                     }`}
                   >
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      {Icon && <Icon className="h-32 w-32 text-teal-600/30" />}
-                    </div>
+                    <Image
+                      src={imagePath}
+                      alt={feature.title}
+                      fill
+                      className="object-contain p-8"
+                    />
                   </div>
                 </div>
               </AnimatedSection>

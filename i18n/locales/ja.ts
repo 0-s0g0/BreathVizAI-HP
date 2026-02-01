@@ -10,7 +10,7 @@ export const ja = {
       },
 hero: {
         title: "BreathViz AI",
-        subtitle: "次世代 呼吸音モニタリング・プラットフォーム", 
+        subtitle: "AI呼吸音解析プラットフォーム", 
         catchphrase: "BreathViz AI",
         catchphrase2: "熟練の「耳」を、すべての現場に", 
         catchphrase3: "日常の呼吸音を電子収音デバイスで録音するだけで、AIによる自動解析を利用できます。バイタルチェックの記録業務を効率化し、呼吸器疾患の早期発見を支えます。",
@@ -18,10 +18,10 @@ hero: {
       },
       mission: {
         label: "Our Mission",
-        title: "呼吸音診断の未来を、",
-        title2: "AIで切り拓く。",
+        title: "100年以上変わらなかった聴診を",
+        title2: "テクノロジーで再定義する",
         description:
-          "医療現場の聴診から遠隔診療まで、AIが実現する次世代の呼吸音分析プラットフォーム。音を可視化し、誰もが手軽で高精度な診断支援を受けられる世界を目指します。",
+          "医療現場の聴診から遠隔診療まで、AIが実現する次世代の呼吸音分析プラットフォーム。音を可視化し、誰もが手軽で呼吸音の診断支援を受けられる世界を目指します。",
       },
       features: {
         label: "Features",
@@ -72,6 +72,13 @@ hero: {
       news: {
         label: "News",
         items: [
+        {
+            "date": "2026.01.20",
+            "tag": "Release",
+            "title": "BreathViz AI 公式サイトを公開しました",
+            "detail": "BreathViz AIのプロジェクトサイトを公開。深層学習を用いた呼吸音解析のデモや、今後の展開について掲載しています。私たちが目指す未来の体験をぜひご覧ください。",
+            "image": "/news/news5.png"
+        },
         {
             "date": "2026.01.20",
             "tag": "Release",
