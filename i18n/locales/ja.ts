@@ -19,7 +19,7 @@ hero: {
       mission: {
         label: "Our Mission",
         title: "聴診の未来を拓く、",
-        title2: "AIによる呼吸音診断支援",
+        title2: "呼吸音分類AI",
         description:
           "医療現場の聴診から遠隔診療まで、AIが実現する次世代の呼吸音分析プラットフォーム。音を可視化し、誰もが手軽で呼吸音の診断支援を受けられる世界を目指します。",
       },
@@ -129,7 +129,7 @@ hero: {
       },
       contact: {
         label: "Contact",
-        title: "API連携・導入のご相談",
+        title: "お問い合わせ",
         description: "BreathViz AIのAPI連携、導入に関するご相談、その他ご質問がございましたら、お気軽にお問い合わせください。",
         form: {
           name: "お名前",

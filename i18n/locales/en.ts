@@ -6,7 +6,7 @@ export const en = {
     news: "News",
     faq: "FAQ",
     contact: "Contact",
-    launch: "Launch App",
+    launch: "Open App",
   },
   hero: {
     title: "BreathViz AI",
@@ -21,7 +21,7 @@ export const en = {
     title: "Pioneering the Future",
     title2: "of Lung Sound Diagnosis with AI.",
     description:
-      "A next-generation respiratory sound analysis platform that bridges the gap between clinical auscultation and remote medicine. By visualizing sound, we aim to create a world where high-precision diagnostic support is accessible to everyone.",
+      "A next-generation respiratory sound analysis platform that bridges the gap between clinical auscultation and telemedicine. By visualizing sound, we aim for a world where anyone can easily access diagnostic support for respiratory health.",
   },
   features: {
     label: "Features",
@@ -31,15 +31,15 @@ export const en = {
         title: "Sound to Image",
         subtitle: "Spectrogram Visualization",
         description:
-          "Convert respiratory sounds into real-time spectrograms. We evolve auscultation—which traditionally relied on ears and experience—into a data-driven visual analysis.",
+          "Convert respiratory sounds into real-time spectrograms. We evolve traditional auscultation—once dependent on ears and experience—into an intuitive visual analysis.",
         icon: "ImageIcon",
       },
       {
         number: "02",
         title: "Sound Classification",
-        subtitle: "AI-Powered Adventitious Sound Detection",
+        subtitle: "AI-Aided Abnormal Sound Detection",
         description:
-          "Deep learning automatically identifies respiratory patterns. Sounds are classified into four categories: Normal, Crackles, Wheezes, or Both.",
+          "Automatically identify respiratory patterns using deep learning. The AI classifies sounds into four categories: Normal, Crackles, Wheezes, or Both.",
         icon: "Brain",
       },
       {
@@ -47,23 +47,23 @@ export const en = {
         title: "Flexible Integration",
         subtitle: "Multi-device & API Support",
         description:
-          "Device-agnostic and ready for use with your smartphone and digital stethoscopes. Our external API allows seamless integration with existing medical and nursing care systems.",
+          "Device-agnostic and ready for use on smartphones with digital stethoscopes. Seamlessly integrate with existing medical or care systems via our external API, regardless of your environment.",
         icon: "Share2",
       },
     ],
   },
   howto: {
     label: "How to Use",
-    title: "3 Simple Steps",
+    title: "Simple 3-Step Operation",
     steps: [
       { step: "01", title: "Record", description: "Record respiratory sounds using a smartphone or digital device." },
       { step: "02", title: "Analyze", description: "AI automatically generates a spectrogram and classifies the sound." },
-      { step: "03", title: "Review", description: "Receive a visual report and detailed analysis results instantly." },
+      { step: "03", title: "Review", description: "Get visual reports and detailed analysis results instantly." },
     ],
   },
   team: {
     label: "Team",
-    title: "Development Team : KamiLab",
+    title: "Development Team: Kami-Lab",
     members: [
       { name: "Ryusei Oshima", role: "Backend Engineer", image: "/icons/Ryu.jpg", xUrl: "https://x.com/o4_ryu5ei" },
       { name: "Rei Sogo", role: "Frontend Engineer", image: "/icons/Rei.jpg", xUrl: "https://x.com/0_s0g0" },
@@ -73,45 +73,45 @@ export const en = {
     label: "News",
     items: [
       {
-        date: "2026.01.20",
+        date: "2026.01.13",
         tag: "Release",
         title: "BreathViz AI Official Website Launched",
-        detail: "We have launched our project site featuring AI-powered respiratory analysis demos and our future roadmap. Experience the future of healthcare with us.",
-        image: "/news/news5.png"
+        detail: "We have launched the project site for BreathViz AI, featuring our deep learning-based respiratory analysis demo and future roadmap. Experience the future we are building.",
+        image: "/news/news7.png"
       },
       {
         date: "2026.01.19",
         tag: "Adoption",
-        title: "Selected for University Startup Grant Program",
-        detail: "We have been selected for the PreGAP Fund Grant Program for business development aimed at creating startups from Kyutech. The funds will be used for future development to improve product quality and expand functionality.",
+        title: "Selected for University Business Grant",
+        detail: "We were selected for the PreGAP Fund, a grant for business development aimed at creating startups from Kyushu Institute of Technology. We will use these funds to improve product quality and expand features.",
         image: "/news/news6.png"
       },
       {
         date: "2025.12.11",
         tag: "Event",
         title: "Presented at ROCKET PITCH NIGHT FUKUOKA 2025",
-        detail: "Presented BreathViz AI during the student session in Fukuoka. We received valuable feedback from judges, reaffirming the market potential and social impact of our product.",
+        detail: "Spoke at a pitch event in Fukuoka. During the student session, we presented BreathViz AI and received feedback from judges, reaffirming its market potential and social impact.",
         image: "/news/news4.png"
       },
       {
         date: "2025.11.30",
         tag: "Award",
         title: "Won Grand Prize & Corporate Award at Geekten 2025",
-        detail: "At Geekten 2025, a major festival for student engineers, we were honored with the Grand Prize (First Place) and the WingArc1st Corporate Award.",
+        detail: "At Geekten 2025, one of Japan's largest student engineer festivals, we received the top Grand Prize and the WingArc1st Corporate Award.",
         image: "/news/news3.png"
       },
       {
         date: "2025.11.16",
         tag: "Event",
-        title: "Participated in Geek Camp Hackathon Fukuoka",
-        detail: "Joined the Fukuoka session of Geek Camp. We engaged with many engineers, professionals, and students, gaining extensive feedback for product improvement.",
+        title: "Participated in Geek Camp Caravan Fukuoka",
+        detail: "Joined Geek Camp in Fukuoka. We connected with many engineers and students, receiving valuable feedback on our product.",
         image: "/news/news2.png"
       },
       {
         date: "2025.09.28",
         tag: "Award",
-        title: "Won 2nd Prize at JunctionX Kyutech 2025",
-        detail: "Secured 2nd Prize at the international hackathon held at Kyushu Institute of Technology. Conducted our pitch and technical demo in English to a global panel of judges.",
+        title: "Won 2nd Prize at JunctionXKyutech 2025",
+        detail: "Awarded 2nd Prize at the international hackathon held at Kyushu Institute of Technology. We conducted our pitch and technical demo in English for a global jury.",
         image: "/news/news1.png"
       },
     ],
@@ -122,21 +122,21 @@ export const en = {
     label: "FAQ",
     title: "Frequently Asked Questions",
     items: [
-      { q: "What devices are supported?", a: "We support iOS, Android, and web browsers. Integration with specialized digital stethoscopes is also available." },
-      { q: "Is API integration available?", a: "Yes, we provide a RESTful API for seamless integration with Electronic Health Records (EHR) and other medical systems." },
-      { q: "What is the cost of implementation?", a: "Costs vary depending on the facility size and specific requirements. Please contact us for a detailed proposal." },
+      { q: "Which devices are supported?", a: "We support iOS, Android, and web browsers. The platform is responsive for both PC and mobile, and can be paired with specialized digital stethoscopes." },
+      { q: "Is API integration available?", a: "Yes, we provide a RESTful API for seamless integration with electronic medical records (EMR) and other healthcare systems." },
+      { q: "What is the implementation cost?", a: "Costs vary based on the scale of the facility and specific requirements. Please contact us for a detailed quote." },
     ],
   },
   contact: {
     label: "Contact",
-    title: "Inquiries for API & Integration",
-    description: "For questions regarding API integration, implementation, or any other inquiries, please feel free to reach out to us.",
+    title: "Inquiries regarding API & Implementation",
+    description: "Please feel free to reach out for consultations on API integration, implementation, or any other questions regarding BreathViz AI.",
     form: {
       name: "Name",
       email: "Email Address",
       organization: "Organization",
       message: "Message",
-      submit: "Submit",
+      submit: "Send Message",
     },
   },
   footer: {
