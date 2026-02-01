@@ -30,9 +30,10 @@ export async function POST(request: NextRequest) {
     console.log('Attempting to send email via Resend...')
 
     // Resendでメール送信
+    const contactEmail = process.env.CONTACT_EMAIL || 'info@0-s0g0.com'
     const { data, error } = await resend.emails.send({
-      from: 'BreathVizAI Contact <onboarding@resend.dev>', // Resendの検証済みドメインから送信
-      to: ['info@0-s0g0.com'],
+      from: 'BreathVizAI お問い合わせ <noreply@0-s0g0.com>',
+      to: [contactEmail],
       replyTo: email,
       subject: `【お問い合わせ】${organization ? `${organization} - ` : ''}${name}様より`,
       html: `
