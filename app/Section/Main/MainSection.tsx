@@ -52,6 +52,8 @@ export function MainSection() {
                   width={800}
                   height={600}
                   className="w-full object-cover"
+                  priority
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                 />
               </div>
             </AnimatedSection>

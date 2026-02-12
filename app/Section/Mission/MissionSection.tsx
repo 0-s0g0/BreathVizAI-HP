@@ -13,11 +13,12 @@ export function MissionSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
-          src="/MIssionBack.jpg"
+          src="/mission-bg.jpg"
           alt="Mission Background"
           fill
           className="object-cover"
-          priority
+          sizes="100vw"
+          quality={70}
         />
       </div>
 

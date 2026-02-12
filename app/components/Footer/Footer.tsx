@@ -23,6 +23,7 @@ export function Footer({ language, setLanguage }: FooterProps) {
               alt="BreathViz AI Logo"
               width={20}
               height={20}
+              sizes="20px"
             />
           </div>
           <span className="text-lg font-semibold text-[#0a1a1f]">BreathViz AI</span>

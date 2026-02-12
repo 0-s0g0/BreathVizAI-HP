@@ -60,6 +60,7 @@ export function FeaturesSection() {
                       alt={feature.title}
                       fill
                       className="object-contain p-8"
+                      sizes="(min-width: 1024px) 50vw, 100vw"
                     />
                   </div>
                 </div>

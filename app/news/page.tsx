@@ -165,6 +165,8 @@ export default function NewsPage() {
                 alt={selectedNews.title}
                 fill
                 className="object-cover"
+                sizes="(min-width: 1024px) 70vw, 100vw"
+                quality={80}
               />
             </div>
           )}

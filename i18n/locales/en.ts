@@ -73,46 +73,53 @@ export const en = {
     label: "News",
     items: [
       {
-        date: "2026.01.13",
+        date: "2026.02.02",
+        tag: "Award",
+        title: "Received Chairman's Award at Fukuoka Future IT Startup Awards",
+        detail: "We received the Chairman's Award at a startup support program hosted by Fukuoka Prefecture.",
+        image: "/news/news8.jpg"
+      },
+      {
+        date: "2026.01.31",
         tag: "Release",
         title: "BreathViz AI Official Website Launched",
         detail: "We have launched the project site for BreathViz AI, featuring our deep learning-based respiratory analysis demo and future roadmap. Experience the future we are building.",
-        image: "/news/news7.png"
+        image: "/news/news7.jpg"
       },
       {
         date: "2026.01.19",
         tag: "Adoption",
         title: "Selected for University Business Grant",
         detail: "We were selected for the PreGAP Fund, a grant for business development aimed at creating startups from Kyushu Institute of Technology. We will use these funds to improve product quality and expand features.",
-        image: "/news/news6.png"
+        image: "/news/news6.jpg"
       },
       {
         date: "2025.12.11",
         tag: "Event",
         title: "Presented at ROCKET PITCH NIGHT FUKUOKA 2025",
         detail: "Spoke at a pitch event in Fukuoka. During the student session, we presented BreathViz AI and received feedback from judges, reaffirming its market potential and social impact.",
-        image: "/news/news4.png"
+        image: "/news/news4.jpg"
       },
       {
         date: "2025.11.30",
         tag: "Award",
         title: "Won Grand Prize & Corporate Award at Geekten 2025",
         detail: "At Geekten 2025, one of Japan's largest student engineer festivals, we received the top Grand Prize and the WingArc1st Corporate Award.",
-        image: "/news/news3.png"
+        image: "/news/news3.jpg"
       },
       {
         date: "2025.11.16",
         tag: "Event",
         title: "Participated in Geek Camp Caravan Fukuoka",
         detail: "Joined Geek Camp in Fukuoka. We connected with many engineers and students, receiving valuable feedback on our product.",
-        image: "/news/news2.png"
+        image: "/news/news2.jpg"
       },
       {
         date: "2025.09.28",
         tag: "Award",
         title: "Won 2nd Prize at JunctionXKyutech 2025",
         detail: "Awarded 2nd Prize at the international hackathon held at Kyushu Institute of Technology. We conducted our pitch and technical demo in English for a global jury.",
-        image: "/news/news1.png"
+        image: "/news/news1.jpg"
       },
     ],
     more: "Read More",

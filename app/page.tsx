@@ -97,8 +97,8 @@ export default function HomePage() {
       <FeaturesSection/>
 
 
-      {/* How to Use Section */}
-      <HowToSection />
+      {/* How to Use Section <HowToSection />*/}
+      
 
       {/* News Section - Dark */}
       <NewsSection />
