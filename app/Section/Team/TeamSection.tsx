@@ -39,6 +39,8 @@ export function TeamSection() {
                     alt={member.name}
                     fill
                     className="object-cover"
+                    sizes="160px"
+                    quality={70}
                   />
                 </div>
                 <h3 className="mb-1 text-lg font-semibold text-[#0a1a1f]">{member.name}</h3>

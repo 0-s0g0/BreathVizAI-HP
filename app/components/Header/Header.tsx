@@ -35,6 +35,7 @@ export function Header({ language, setLanguage, isDarkSection, navItems, launchT
               width={20}
               height={20}
               className="transition-colors duration-500"
+              sizes="20px"
             />
           </div>
           <span className={`text-lg font-semibold tracking-tight transition-colors duration-500 ${

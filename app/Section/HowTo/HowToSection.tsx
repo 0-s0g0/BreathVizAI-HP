@@ -47,6 +47,7 @@ export function HowToSection() {
                         alt={step.title}
                         fill
                         className="object-contain p-4"
+                        sizes="(min-width: 1024px) 33vw, 100vw"
                       />
                     </div>
                     <div className="flex items-center gap-3 mb-6">
