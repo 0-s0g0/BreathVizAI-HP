@@ -73,11 +73,32 @@ export const en = {
     label: "News",
     items: [
       {
+        date: "2026.04.27",
+        tag: "Adoption",
+        title: "Selected for NEDO/Nep New Star Course",
+        detail: "We were selected as a candidate for the New Star Course, a support program for female deep tech entrepreneurs in the Kyushu region, as part of NEDO's support project for research and development startups (NEP). We will utilize this funding for development and work towards implementation with a view to social implementation over the next year.",
+        image: "/news/news6.jpg" 
+      },
+      {
+        date: "2026.03.27",
+        tag: "Adoption",
+        title: "Presented at International Conference [ICBEA2026]",
+        detail: "We presented our latest research results on the web-based prototype for respiratory sound analysis at the international conference [ICBEA2026].",
+        image: "/news/news6.jpg"
+      },
+      {
         date: "2026.02.02",
         tag: "Award",
         title: "Received Chairman's Award at Fukuoka Future IT Startup Awards",
         detail: "We received the Chairman's Award at a startup support program hosted by Fukuoka Prefecture.",
         image: "/news/news8.jpg"
+      },
+      {
+        date: "2026.01.29",
+        tag: "Adoption",
+        title: "Presented at International Conference [ICAROB2026]",
+        detail: "We presented our latest research results on respiratory sound analysis AI models at the international conference [ICAROB2026].",
+        image: "/news/news6.jpg"
       },
       {
         date: "2026.01.31",
