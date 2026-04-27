@@ -71,7 +71,7 @@ export default function NewsPage() {
 
   const newsData = t(tKeys.news.items, { returnObjects: true }) as readonly NewsItem[]
 
-  const tags = ["All", "Release", "Award", "Event"]
+  const tags = ["All", "Release", "Award", "Event","Adoption"] as const
 
   const filteredNews =
     selectedTag === "All"
