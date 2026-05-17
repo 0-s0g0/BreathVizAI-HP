@@ -1,20 +1,12 @@
 "use client"
 
-import { useState } from "react"
 import { AnimatedSection } from "@/app/Animation/AnimationSection"
 import { ArrowRight } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { tKeys } from "@/i18n/keys"
-import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { NewsCard } from "@/app/components/NewsCard/NewsCard"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog"
 
 type NewsItem = {
   readonly date: string
@@ -24,24 +16,11 @@ type NewsItem = {
   readonly image: string
 }
 
-const getTagColor = (tag: string) => {
-  switch (tag) {
-    case "Release":
-      return "border-teal-400/30 text-teal-400"
-    case "Award":
-      return "border-orange-400/30 text-orange-400"
-    case "Event":
-      return "border-purple-400/30 text-purple-400"
-    case "Adoption":
-      return "border-amber-400/30 text-amber-400"
-    default:
-      return "border-teal-400/30 text-teal-400"
-  }
-}
+const getNewsId = (item: NewsItem) => item.date.replaceAll(".", "-")
 
 export function NewsSection() {
-  const { t } = useTranslation()
-  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null)
+  const { t, i18n } = useTranslation()
+  const router = useRouter()
 
   const newsData = t(tKeys.news.items, { returnObjects: true }) as readonly NewsItem[]
   const displayNews = newsData.slice(0, 4) // 最初の8件のみ表示
@@ -61,7 +40,9 @@ export function NewsSection() {
               <AnimatedSection key={index} delay={index * 100}>
                 <NewsCard
                   item={item}
-                  onClick={() => setSelectedNews(item)}
+                  onClick={() =>
+                    router.push(`/news/${getNewsId(item)}?lang=${i18n.language === "en" ? "en" : "ja"}`)
+                  }
                 />
               </AnimatedSection>
             ))}
@@ -81,43 +62,6 @@ export function NewsSection() {
           </AnimatedSection>
         </div>
       </section>
-
-      <Dialog open={selectedNews !== null} onOpenChange={() => setSelectedNews(null)}>
-        <DialogContent className="max-w-4xl bg-white max-h-[90vh] overflow-y-auto">
-          <DialogHeader>
-            <div className="mb-4 flex items-center gap-4">
-              <span className="font-mono text-sm text-gray-500">{selectedNews?.date}</span>
-              <span
-                className={`rounded-full border px-3 py-1 text-xs font-medium ${
-                  selectedNews ? getTagColor(selectedNews.tag) : ""
-                }`}
-              >
-                {selectedNews?.tag}
-              </span>
-            </div>
-            <DialogTitle className="text-2xl font-semibold text-[#0a1a1f] lg:text-3xl">
-              {selectedNews?.title}
-            </DialogTitle>
-          </DialogHeader>
-
-          {selectedNews?.image && (
-            <div className="relative aspect-video w-full overflow-hidden rounded-xl">
-              <Image
-                src={selectedNews.image}
-                alt={selectedNews.title}
-                fill
-                className="object-cover"
-                sizes="(min-width: 1024px) 70vw, 100vw"
-                quality={80}
-              />
-            </div>
-          )}
-
-          <DialogDescription className="mt-4 text-base leading-relaxed text-[#0a1a1f]/70">
-            {selectedNews?.detail}
-          </DialogDescription>
-        </DialogContent>
-      </Dialog>
     </>
   )
 }
