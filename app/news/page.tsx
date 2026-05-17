@@ -10,7 +10,7 @@ import i18n from "@/i18n/config"
 import { Header } from "../components/Header/Header"
 import { en } from "@/i18n/locales/en"
 import { ja } from "@/i18n/locales/ja"
-import { useRouter, useSearchParams } from "next/navigation"
+import { useRouter } from "next/navigation"
 
 type NewsItem = {
   readonly date: string
@@ -24,13 +24,18 @@ const getNewsId = (item: NewsItem) => item.date.replaceAll(".", "-")
 
 export default function NewsPage() {
   const { t } = useTranslation()
-  const searchParams = useSearchParams()
-  const lang = searchParams.get("lang")
   const [selectedTag, setSelectedTag] = useState<string>("All")
-  const [language, setLanguage] = useState<"ja" | "en">(lang === "en" ? "en" : "ja")
+  const [language, setLanguage] = useState<"ja" | "en">("ja")
   const router = useRouter()
 
   // i18nextの言語を同期
+  useEffect(() => {
+    const langParam = new URLSearchParams(window.location.search).get("lang")
+    if (langParam === "en") {
+      setLanguage("en")
+    }
+  }, [])
+
   useEffect(() => {
     i18n.changeLanguage(language)
   }, [language])

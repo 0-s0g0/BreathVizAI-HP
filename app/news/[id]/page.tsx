@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { useParams, useSearchParams } from "next/navigation"
+import { useParams } from "next/navigation"
 import { ArrowLeft } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import i18n from "@/i18n/config"
@@ -41,9 +41,14 @@ const getTagColor = (tag: string) => {
 export default function NewsDetailPage() {
   const { t } = useTranslation()
   const params = useParams<{ id: string }>()
-  const searchParams = useSearchParams()
-  const lang = searchParams.get("lang")
-  const [language, setLanguage] = useState<"ja" | "en">(lang === "en" ? "en" : "ja")
+  const [language, setLanguage] = useState<"ja" | "en">("ja")
+
+  useEffect(() => {
+    const langParam = new URLSearchParams(window.location.search).get("lang")
+    if (langParam === "en") {
+      setLanguage("en")
+    }
+  }, [])
 
   useEffect(() => {
     i18n.changeLanguage(language)
