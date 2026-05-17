@@ -75,7 +75,7 @@ export const en = {
       {
         date: "2026.04.27",
         tag: "Adoption",
-        title: "Selected for NEDO/Nep New Star Course",
+        title: "Selected for NEDO/NEP New Star Course",
         detail: "We were selected as a candidate for the New Star Course, a support program for female deep tech entrepreneurs in the Kyushu region, as part of NEDO's support project for research and development startups (NEP). We will utilize this funding for development and work towards implementation with a view to social implementation over the next year.",
         link: "https://nep-shinsei.tayo.jp/",
         image: "/news/news6.jpg" 
