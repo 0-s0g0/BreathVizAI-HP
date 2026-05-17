@@ -14,6 +14,7 @@ type NewsItem = {
   readonly title: string
   readonly detail: string
   readonly image: string
+  readonly link?: string
 }
 
 const getNewsId = (item: NewsItem) => item.date.replaceAll(".", "-")

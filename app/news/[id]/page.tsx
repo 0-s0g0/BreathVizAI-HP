@@ -13,12 +13,15 @@ import { Header } from "@/app/components/Header/Header"
 import { en } from "@/i18n/locales/en"
 import { ja } from "@/i18n/locales/ja"
 
+export const runtime = "edge"
+
 type NewsItem = {
   readonly date: string
   readonly tag: string
   readonly title: string
   readonly detail: string
   readonly image: string
+  readonly link?: string
 }
 
 const getNewsId = (item: NewsItem) => item.date.replaceAll(".", "-")
@@ -145,6 +148,18 @@ export default function NewsDetailPage() {
           </div>
 
           <p className="mt-8 whitespace-pre-line text-base leading-relaxed text-[#0a1a1f]/75">{newsItem.detail}</p>
+          {newsItem.link && (
+            <p className="mt-4 text-sm">
+              <a
+                href={newsItem.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-teal-700 underline underline-offset-4 hover:opacity-80"
+              >
+                関連リンク: {newsItem.link}
+              </a>
+            </p>
+          )}
 
           <div className="mt-8">
             <button
