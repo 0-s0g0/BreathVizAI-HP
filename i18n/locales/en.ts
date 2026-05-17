@@ -77,6 +77,7 @@ export const en = {
         tag: "Adoption",
         title: "Selected for NEDO/Nep New Star Course",
         detail: "We were selected as a candidate for the New Star Course, a support program for female deep tech entrepreneurs in the Kyushu region, as part of NEDO's support project for research and development startups (NEP). We will utilize this funding for development and work towards implementation with a view to social implementation over the next year.",
+        link: "https://nep-shinsei.tayo.jp/",
         image: "/news/news6.jpg" 
       },
       {
@@ -91,6 +92,7 @@ export const en = {
         tag: "Award",
         title: "Received Chairman's Award at Fukuoka Future IT Startup Awards",
         detail: "We received the Chairman's Award at a startup support program hosted by Fukuoka Prefecture.",
+        link: "https://digitalfukuoka.jp/report/report-2209/",
         image: "/news/news8.jpg"
       },
       {
@@ -112,6 +114,7 @@ export const en = {
         tag: "Adoption",
         title: "Selected for University Business Grant",
         detail: "We were selected for the PreGAP Fund, a grant for business development aimed at creating startups from Kyushu Institute of Technology. We will use these funds to improve product quality and expand features.",
+        link: "https://www.kyutech.ac.jp/whats-new/press/entry-11943.html",
         image: "/news/news6.jpg"
       },
       {
@@ -126,6 +129,7 @@ export const en = {
         tag: "Award",
         title: "Won Grand Prize & Corporate Award at Geekten 2025",
         detail: "At Geekten 2025, one of Japan's largest student engineer festivals, we received the top Grand Prize and the WingArc1st Corporate Award.",
+        link: "https://www.kyutech.ac.jp/whats-new/topics/entry-11868.html",
         image: "/news/news3.jpg"
       },
       {
