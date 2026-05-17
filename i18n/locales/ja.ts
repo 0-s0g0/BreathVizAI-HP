@@ -92,12 +92,13 @@ hero: {
             "tag": "Award",
             "title": "福岡県未来ITスタートアップアワードにて理事長賞を受賞しました",
             "detail": "福岡県が主催するスタートアップ支援プログラムにて、理事長賞を受賞しました。",
+            "link": "https://digitalfukuoka.jp/report/report-2209/",
             "image": "/news/news8.jpg"
         },
         {
             "date": "2026.01.29",
             "tag": "Adoption",
-            "title": "国際学会[ICAROB2026]にて論文発表を行しました",
+            "title": "国際学会[ICAROB2026]にて論文発表を行いました",
             "detail": "国際学会[ICAROB2026]にて、最新の呼吸音解析AIモデルの研究成果を発表しました。",
             "image": "/news/news6.jpg"
         },
@@ -113,6 +114,7 @@ hero: {
             "tag": "Adoption",
             "title": "学内事業助成金制度に採択されました",
             "detail": "九工大発スタートアップ創出に向けた事業開発用PreGAPファンド助成金制度に採択されました。今後の開発資金として活用し、プロダクトの品質向上と機能拡充を図ってまいります。",
+            "link": "https://www.kyutech.ac.jp/whats-new/press/entry-11943.html",
             "image": "/news/news6.jpg"
         },
         {
@@ -127,6 +129,7 @@ hero: {
             "tag": "Award",
             "title": "技育展2025にて優賞＆企業賞をダブル受賞しました",
             "detail": "学生エンジニアの祭典「技育展2025」にて、最高賞である優勝（最優秀賞）およびウイングアーク１ｓｔ賞を受賞しました。",
+            "link": "https://www.kyutech.ac.jp/whats-new/topics/entry-11868.html",
             "image": "/news/news3.jpg"
         },
         {
