@@ -3,6 +3,16 @@ import { NextRequest, NextResponse } from 'next/server'
 // Cloudflare Pages requires Edge Runtime
 export const runtime = 'edge'
 
+const escapeHtml = (value: string) =>
+  value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+
+const EMAIL_PATTERN = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/
+
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
@@ -17,12 +27,28 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       )
     }
+    if (
+      typeof name !== 'string' ||
+      typeof email !== 'string' ||
+      typeof message !== 'string' ||
+      (organization != null && typeof organization !== 'string') ||
+      name.length > 200 ||
+      email.length > 254 ||
+      (organization?.length ?? 0) > 200 ||
+      message.length > 5000 ||
+      !EMAIL_PATTERN.test(email)
+    ) {
+      return NextResponse.json(
+        { error: 'Invalid input' },
+        { status: 400 }
+      )
+    }
 
     // APIキーの確認
     if (!process.env.RESEND_API_KEY) {
       console.error('RESEND_API_KEY is not set in environment variables')
       return NextResponse.json(
-        { error: 'Server configuration error: API key not set' },
+        { error: 'Internal server error' },
         { status: 500 }
       )
     }
@@ -44,11 +70,11 @@ export async function POST(request: NextRequest) {
         subject: `【お問い合わせ】${organization ? `${organization} - ` : ''}${name}様より`,
         html: `
           <h2>新しいお問い合わせが届きました</h2>
-          <p><strong>お名前:</strong> ${name}</p>
-          <p><strong>メールアドレス:</strong> ${email}</p>
-          ${organization ? `<p><strong>組織名:</strong> ${organization}</p>` : ''}
+          <p><strong>お名前:</strong> ${escapeHtml(name)}</p>
+          <p><strong>メールアドレス:</strong> ${escapeHtml(email)}</p>
+          ${organization ? `<p><strong>組織名:</strong> ${escapeHtml(organization)}</p>` : ''}
           <h3>メッセージ:</h3>
-          <p>${message.replace(/\n/g, '<br>')}</p>
+          <p>${escapeHtml(message).replace(/\n/g, '<br>')}</p>
         `,
       }),
     })
@@ -57,8 +83,8 @@ export async function POST(request: NextRequest) {
       const error = await response.json()
       console.error('Resend error:', error)
       return NextResponse.json(
-        { error: 'Failed to send email', details: error },
-        { status: response.status }
+        { error: 'Failed to send email' },
+        { status: 502 }
       )
     }
 
@@ -66,13 +92,13 @@ export async function POST(request: NextRequest) {
     console.log('Email sent successfully:', data)
 
     return NextResponse.json(
-      { message: 'Message sent successfully', data },
+      { message: 'Message sent successfully' },
       { status: 200 }
     )
   } catch (error) {
     console.error('Error processing contact form:', error)
     return NextResponse.json(
-      { error: 'Internal server error', details: error instanceof Error ? error.message : 'Unknown error' },
+      { error: 'Internal server error' },
       { status: 500 }
     )
   }
