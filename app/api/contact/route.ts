@@ -13,10 +13,77 @@ const escapeHtml = (value: string) =>
 
 const EMAIL_PATTERN = /^[^\s@<>"]+@[^\s@<>"]+\.[^\s@<>"]+$/
 
+// IP ごとの簡易レート制限（Edge のインスタンス単位で保持されるベストエフォート）
+const RATE_LIMIT_WINDOW_MS = 10 * 60 * 1000
+const RATE_LIMIT_MAX_REQUESTS = 5
+const requestLog = new Map<string, number[]>()
+
+const isRateLimited = (ip: string) => {
+  const now = Date.now()
+  const recent = (requestLog.get(ip) ?? []).filter((time) => now - time < RATE_LIMIT_WINDOW_MS)
+  if (recent.length >= RATE_LIMIT_MAX_REQUESTS) {
+    requestLog.set(ip, recent)
+    return true
+  }
+  recent.push(now)
+  requestLog.set(ip, recent)
+
+  if (requestLog.size > 10000) {
+    for (const [key, times] of requestLog) {
+      if (times.every((time) => now - time >= RATE_LIMIT_WINDOW_MS)) requestLog.delete(key)
+    }
+  }
+  return false
+}
+
+const getClientIp = (request: NextRequest) =>
+  request.headers.get('cf-connecting-ip') ??
+  request.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
+  'unknown'
+
+// Cloudflare Turnstile のトークン検証
+const verifyTurnstile = async (token: unknown, ip: string) => {
+  const secret = process.env.TURNSTILE_SECRET_KEY
+  if (!secret) {
+    console.warn('TURNSTILE_SECRET_KEY is not set; skipping CAPTCHA verification')
+    return true
+  }
+  if (typeof token !== 'string' || !token || token.length > 2048) return false
+
+  const formData = new FormData()
+  formData.append('secret', secret)
+  formData.append('response', token)
+  if (ip !== 'unknown') formData.append('remoteip', ip)
+
+  const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    body: formData,
+  })
+  if (!response.ok) return false
+  const result = (await response.json()) as { success?: boolean }
+  return result.success === true
+}
+
 export async function POST(request: NextRequest) {
   try {
+    const ip = getClientIp(request)
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: 'Too many requests' },
+        { status: 429 }
+      )
+    }
+
     const body = await request.json()
-    const { name, email, organization, message } = body
+    const { name, email, organization, message, website, turnstileToken } = body
+
+    // ハニーポット: 人間には見えない項目に入力があればボットとみなし、送信せず成功を返す
+    if (website) {
+      return NextResponse.json(
+        { message: 'Message sent successfully' },
+        { status: 200 }
+      )
+    }
 
     console.log('Contact form data:', { name, email, organization, messageLength: message?.length })
 
@@ -41,6 +108,13 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         { error: 'Invalid input' },
         { status: 400 }
+      )
+    }
+
+    if (!(await verifyTurnstile(turnstileToken, ip))) {
+      return NextResponse.json(
+        { error: 'CAPTCHA verification failed' },
+        { status: 403 }
       )
     }
 
