@@ -31,16 +31,6 @@ export function MainSection() {
                 <div className="block md:text-xl lg:text-4xl mb-5">{t(tKeys.hero.catchphrase2)}</div>
                 <div className="block md:text-xl lg:text-xl mb-5">{t(tKeys.hero.catchphrase3)}</div>
               </div>
-              <div className="flex flex-wrap gap-4">
-                <a
-                  href="https://breathviz-ai.vercel.app/"
-                  data-hover
-                  className="inline-flex items-center gap-2 rounded-full bg-[#0a1a1f] px-8 py-4 text-sm font-medium text-white transition-transform hover:scale-105"
-                >
-                  <Play className="h-4 w-4" />
-                  {t(tKeys.nav.launch)}
-                </a>
-              </div>
             </AnimatedSection>
 
             {/* Right: Interactive Demo */}

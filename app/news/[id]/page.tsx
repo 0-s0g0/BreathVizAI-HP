@@ -65,7 +65,6 @@ export default function NewsDetailPage() {
     { href: "/#howto", label: content.nav.howto },
     { href: "/#team", label: content.nav.team },
     { href: "/#news", label: content.nav.news },
-    { href: "/#faq", label: content.nav.faq },
     { href: "/#contact", label: content.nav.contact },
   ]
 
@@ -93,7 +92,6 @@ export default function NewsDetailPage() {
           setLanguage={setLanguage}
           isDarkSection={false}
           navItems={navItems}
-          launchText={content.nav.launch}
         />
         <main className="min-h-screen bg-[#fafafa] pt-28">
           <div className="mx-auto max-w-4xl px-6 py-16">
@@ -115,7 +113,6 @@ export default function NewsDetailPage() {
         setLanguage={setLanguage}
         isDarkSection={false}
         navItems={navItems}
-        launchText={content.nav.launch}
       />
       <main className="min-h-screen bg-[#fafafa] pt-28">
         <article className="mx-auto max-w-4xl px-6 py-10">

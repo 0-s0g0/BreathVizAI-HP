@@ -4,24 +4,22 @@ export const en = {
     howto: "How to Use",
     team: "Team",
     news: "News",
-    faq: "FAQ",
     contact: "Contact",
-    launch: "Open App",
   },
   hero: {
     title: "BreathViz AI",
-    subtitle: "Next-Generation Respiratory Sound Monitoring Platform",
+    subtitle: "AI-Powered Respiratory Sound Analysis Platform",
     catchphrase: "BreathViz AI",
-    catchphrase2: "Expert Ears for Every Healthcare Setting",
-    catchphrase3: "Simply record respiratory sounds with a digital device to leverage AI-powered automated analysis. Streamline vital sign documentation and support the early detection of respiratory diseases.",
+    catchphrase2: "Turning 'Something Different' in Breathing into Visible Insights.",
+    catchphrase3: "BreathViz AI is a platform that analyzes respiratory sounds using AI and visualizes and records their characteristics. We are developing a new system to support respiratory sound monitoring in care settings and facilitate information sharing among staff and healthcare professionals.",
     tryDemo: "Try Demo",
   },
   mission: {
     label: "Our Mission",
-    title: "Pioneering the Future",
-    title2: "of Lung Sound Diagnosis with AI.",
+    title: "A Society Where Everyone Can Recognize Changes in Breathing",
+    title2: "and Confidently Take the Next Step.",
     description:
-      "A next-generation respiratory sound analysis platform that bridges the gap between clinical auscultation and telemedicine. By visualizing sound, we aim for a world where anyone can easily access diagnostic support for respiratory health.",
+      "Respiratory sounds are an important source of information about daily health. However, it's not easy to convey their characteristics through words alone or compare them with past records. Through AI-powered visualization, recording, and sharing of respiratory sounds, we aim to create a society where everyone can utilize respiratory information, regardless of expertise or experience.",
   },
   features: {
     label: "Features",
@@ -29,25 +27,25 @@ export const en = {
       {
         number: "01",
         title: "Sound to Image",
-        subtitle: "Spectrogram Visualization",
+        subtitle: "Respiratory Sound Visualization",
         description:
-          "Convert respiratory sounds into real-time spectrograms. We evolve traditional auscultation—once dependent on ears and experience—into an intuitive visual analysis.",
+          "Recorded respiratory sounds are converted into images called spectrograms. Frequency and temporal characteristics of sounds can be visually confirmed, making it possible to capture respiratory sound information that is difficult to share through hearing alone.",
         icon: "ImageIcon",
       },
       {
         number: "02",
-        title: "Sound Classification",
-        subtitle: "AI-Aided Abnormal Sound Detection",
+        title: "AI Analysis of Sound Features",
+        subtitle: "AI-Powered Respiratory Sound Pattern Visualization",
         description:
-          "Automatically identify respiratory patterns using deep learning. The AI classifies sounds into four categories: Normal, Crackles, Wheezes, or Both.",
+          "We utilize our proprietary AI technology to analyze various acoustic features contained in respiratory sounds. We aim to create a system that makes respiratory sounds easier to understand by presenting sound features that are difficult to capture by ear alone as visual information.",
         icon: "Brain",
       },
       {
         number: "03",
-        title: "Flexible Integration",
-        subtitle: "Multi-device & API Support",
+        title: "From Recording to Sharing",
+        subtitle: "Saving, Comparing, and Sharing Respiratory Sounds",
         description:
-          "Device-agnostic and ready for use on smartphones with digital stethoscopes. Seamlessly integrate with existing medical or care systems via our external API, regardless of your environment.",
+          "Respiratory sounds and visualized images can be saved and compared with past records. By recording sounds of concern and the circumstances at the time, they can be used for information sharing among staff and healthcare professionals. We are also expanding features such as API integration with external systems to suit on-site operations.",
         icon: "Share2",
       },
     ],
@@ -56,17 +54,17 @@ export const en = {
     label: "How to Use",
     title: "Simple 3-Step Operation",
     steps: [
-      { step: "01", title: "Record", description: "Record respiratory sounds using a smartphone or digital device." },
-      { step: "02", title: "Analyze", description: "AI automatically generates a spectrogram and classifies the sound." },
-      { step: "03", title: "Review", description: "Get visual reports and detailed analysis results instantly." },
+      { step: "01", title: "Record", description: "Record respiratory sounds with a compatible audio device" },
+      { step: "02", title: "Visualize & Analyze", description: "AI analyzes respiratory sound features and displays them visually" },
+      { step: "03", title: "Review Results", description: "View respiratory sound images and analysis results" },
     ],
   },
   team: {
     label: "Team",
     title: "Development Team: Kami-Lab",
     members: [
-      { name: "Ryusei Oshima", role: "Backend Engineer", image: "/icons/Ryu.jpg", xUrl: "https://x.com/o4_ryu5ei" },
-      { name: "Rei Sogo", role: "Frontend Engineer", image: "/icons/Rei.jpg", xUrl: "https://x.com/0_s0g0" },
+      { name: "Oshima", role: "Backend Engineer", image: "/icons/Ryu.jpg", xUrl: "https://x.com/o4_ryu5ei" },
+      { name: "Sogo", role: "Frontend Engineer", image: "/icons/Rei.jpg", xUrl: "https://x.com/0_s0g0" },
     ],
   },
   news: {
@@ -84,14 +82,14 @@ export const en = {
         date: "2026.03.27",
         tag: "Adoption",
         title: "Presented at International Conference [ICBEA2026]",
-        detail: "We presented our latest research results on the web-based prototype for respiratory sound analysis at the international conference [ICBEA2026].",
+        detail: "We presented our research on the respiratory sound analysis web prototype at the international conference [ICBEA2026].",
         image: "/news/news6.jpg"
       },
       {
         date: "2026.02.02",
         tag: "Award",
         title: "Received Chairman's Award at Fukuoka Future IT Startup Awards",
-        detail: "We received the Chairman's Award at a startup support program hosted by Fukuoka Prefecture.",
+        detail: "We received the Chairman's Award at the Fukuoka Future IT Startup Awards.",
         link: "https://digitalfukuoka.jp/report/report-2209/",
         image: "/news/news8.jpg"
       },
@@ -99,14 +97,14 @@ export const en = {
         date: "2026.01.29",
         tag: "Adoption",
         title: "Presented at International Conference [ICAROB2026]",
-        detail: "We presented our latest research results on respiratory sound analysis AI models at the international conference [ICAROB2026].",
+        detail: "We presented our research on respiratory sound analysis AI models at the international conference [ICAROB2026].",
         image: "/news/news6.jpg"
       },
       {
         date: "2026.01.31",
         tag: "Release",
         title: "BreathViz AI Official Website Launched",
-        detail: "We have launched the project site for BreathViz AI, featuring our deep learning-based respiratory analysis demo and future roadmap. Experience the future we are building.",
+        detail: "We have launched the BreathViz AI project site. It introduces respiratory sound visualization, AI-powered acoustic feature analysis demos, our research and development efforts, and future plans.",
         image: "/news/news7.jpg"
       },
       {
@@ -128,7 +126,7 @@ export const en = {
         date: "2025.11.30",
         tag: "Award",
         title: "Won Grand Prize & Corporate Award at Geekten 2025",
-        detail: "At Geekten 2025, one of Japan's largest student engineer festivals, we received the top Grand Prize and the WingArc1st Corporate Award.",
+        detail: "We won the Grand Prize and a Corporate Award at Geekten 2025, a festival for student engineers.",
         link: "https://www.kyutech.ac.jp/whats-new/topics/entry-11868.html",
         image: "/news/news3.jpg"
       },
@@ -136,33 +134,24 @@ export const en = {
         date: "2025.11.16",
         tag: "Event",
         title: "Participated in Geek Camp Caravan Fukuoka",
-        detail: "Joined Geek Camp in Fukuoka. We connected with many engineers and students, receiving valuable feedback on our product.",
+        detail: "We participated in the Geek Camp held in Fukuoka. We interacted with many engineers, corporate professionals, and students, and received various feedback on our product.",
         image: "/news/news2.jpg"
       },
       {
         date: "2025.09.28",
         tag: "Award",
         title: "Won 2nd Prize at JunctionXKyutech 2025",
-        detail: "Awarded 2nd Prize at the international hackathon held at Kyushu Institute of Technology. We conducted our pitch and technical demo in English for a global jury.",
+        detail: "We won 2nd Prize at an international hackathon held at Kyushu Institute of Technology. We conducted our pitch and technical demo in English to multinational team members and judges. We learned the importance of product development from a global perspective.",
         image: "/news/news1.jpg"
       },
     ],
     more: "Read More",
     moreall: "All News",
   },
-  faq: {
-    label: "FAQ",
-    title: "Frequently Asked Questions",
-    items: [
-      { q: "Which devices are supported?", a: "We support iOS, Android, and web browsers. The platform is responsive for both PC and mobile, and can be paired with specialized digital stethoscopes." },
-      { q: "Is API integration available?", a: "Yes, we provide a RESTful API for seamless integration with electronic medical records (EMR) and other healthcare systems." },
-      { q: "What is the implementation cost?", a: "Costs vary based on the scale of the facility and specific requirements. Please contact us for a detailed quote." },
-    ],
-  },
   contact: {
     label: "Contact",
-    title: "Inquiries regarding API & Implementation",
-    description: "Please feel free to reach out for consultations on API integration, implementation, or any other questions regarding BreathViz AI.",
+    title: "Contact Us",
+    description: "We accept inquiries regarding BreathViz AI research and development, field trials in care settings, collaborative research, and system integration. Facilities, companies, and research institutions interested in our work are welcome to contact us.",
     form: {
       name: "Name",
       email: "Email Address",

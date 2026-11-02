@@ -53,7 +53,6 @@ export default function NewsPage() {
     { href: "/#howto", label: content.nav.howto },
     { href: "/#team", label: content.nav.team },
     { href: "/#news", label: content.nav.news },
-    { href: "/#faq", label: content.nav.faq },
     { href: "/#contact", label: content.nav.contact },
   ]
 
@@ -73,7 +72,6 @@ export default function NewsPage() {
         setLanguage={setLanguage}
         isDarkSection={false}
         navItems={navItems}
-        launchText={content.nav.launch}
       />
       <div className="min-h-screen bg-[#fafafa] pt-20">
 
