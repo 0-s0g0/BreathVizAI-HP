@@ -5,7 +5,7 @@ import {ja} from "../i18n/locales/ja"
 import { Header } from "./components/Header/Header"
 import { LoadingScreen } from "./components/Loading/Loading"
 import { CustomCursor } from "./components/cursor/cursol"
-import { MainSection,MissionSection,FeaturesSection, HowToSection, NewsSection, TeamSection, FaqSection, ContactSection } from "./Section/index"
+import { MainSection,MissionSection,FeaturesSection, HowToSection, NewsSection, TeamSection, ContactSection } from "./Section/index"
 import { Footer } from "./components/Footer/Footer"
 import "@/i18n/config"
 import i18n from "@/i18n/config"
@@ -51,7 +51,6 @@ export default function HomePage() {
     { href: "#howto", label: content.nav.howto },
     { href: "#team", label: content.nav.team },
     { href: "#news", label: content.nav.news },
-    { href: "#faq", label: content.nav.faq },
     { href: "#contact", label: content.nav.contact },
   ]
 
@@ -84,7 +83,6 @@ export default function HomePage() {
         setLanguage={setLanguage}
         isDarkSection={isDarkSection}
         navItems={navItems}
-        launchText={content.nav.launch}
       />
 
       {/* Hero Section */}
@@ -105,9 +103,6 @@ export default function HomePage() {
 
       {/* Team Section */}
       <TeamSection />
-
-      {/* FAQ Section */}
-      <FaqSection />
 
       {/* Contact Section */}
       <ContactSection />

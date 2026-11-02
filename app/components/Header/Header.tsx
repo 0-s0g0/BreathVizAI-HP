@@ -15,10 +15,9 @@ interface HeaderProps {
   setLanguage: (lang: "ja" | "en") => void
   isDarkSection: boolean
   navItems: NavItem[]
-  launchText: string
 }
 
-export function Header({ language, setLanguage, isDarkSection, navItems, launchText }: HeaderProps) {
+export function Header({ language, setLanguage, isDarkSection, navItems }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
@@ -69,17 +68,6 @@ export function Header({ language, setLanguage, isDarkSection, navItems, launchT
             <Globe className="h-4 w-4" />
             {language === "ja" ? "EN" : "JP"}
           </button>
-          <a
-            href="https://breathviz-ai.vercel.app/"
-            data-hover
-            className={`rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-500 ${
-              isDarkSection
-                ? "bg-white text-[#0a1a1f] hover:bg-white/90"
-                : "bg-[#0a1a1f] text-white hover:bg-[#0a1a1f]/90"
-            }`}
-          >
-            {launchText}
-          </a>
         </nav>
 
         {/* Mobile Menu Button */}
