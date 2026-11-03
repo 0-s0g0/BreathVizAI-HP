@@ -8,7 +8,22 @@ import { Label } from "@/components/ui/label"
 import { Mail } from "lucide-react"
 import { useTranslation } from "react-i18next"
 import { tKeys } from "@/i18n/keys"
-import { useState, FormEvent } from "react"
+import { useEffect, useRef, useState, FormEvent } from "react"
+import Script from "next/script"
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY
+
+type Turnstile = {
+  render: (container: HTMLElement, options: Record<string, unknown>) => string
+  reset: (widgetId?: string) => void
+  remove: (widgetId?: string) => void
+}
+
+declare global {
+  interface Window {
+    turnstile?: Turnstile
+  }
+}
 
 export function ContactSection() {
   const { t } = useTranslation()
@@ -18,8 +33,39 @@ export function ContactSection() {
     organization: '',
     message: ''
   })
+  const [website, setWebsite] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error' | 'rateLimited' | 'captcha'>('idle')
+  const [isTurnstileLoaded, setIsTurnstileLoaded] = useState(false)
+  const [turnstileToken, setTurnstileToken] = useState('')
+  const turnstileContainerRef = useRef<HTMLDivElement>(null)
+  const turnstileWidgetIdRef = useRef<string | null>(null)
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY || !isTurnstileLoaded || !window.turnstile || !turnstileContainerRef.current) return
+    if (turnstileWidgetIdRef.current) return
+
+    turnstileWidgetIdRef.current = window.turnstile.render(turnstileContainerRef.current, {
+      sitekey: TURNSTILE_SITE_KEY,
+      callback: (token: string) => setTurnstileToken(token),
+      'expired-callback': () => setTurnstileToken(''),
+      'error-callback': () => setTurnstileToken(''),
+    })
+
+    return () => {
+      if (turnstileWidgetIdRef.current) {
+        window.turnstile?.remove(turnstileWidgetIdRef.current)
+        turnstileWidgetIdRef.current = null
+      }
+    }
+  }, [isTurnstileLoaded])
+
+  const resetTurnstile = () => {
+    if (turnstileWidgetIdRef.current) {
+      window.turnstile?.reset(turnstileWidgetIdRef.current)
+    }
+    setTurnstileToken('')
+  }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -32,12 +78,16 @@ export function ContactSection() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, website, turnstileToken }),
       })
 
       if (response.ok) {
         setSubmitStatus('success')
         setFormData({ name: '', email: '', organization: '', message: '' })
+      } else if (response.status === 429) {
+        setSubmitStatus('rateLimited')
+      } else if (response.status === 403) {
+        setSubmitStatus('captcha')
       } else {
         setSubmitStatus('error')
       }
@@ -46,6 +96,7 @@ export function ContactSection() {
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
+      resetTurnstile()
     }
   }
 
@@ -58,6 +109,13 @@ export function ContactSection() {
 
   return (
     <section id="contact" data-section="7" className="relative bg-[#fafafa]">
+      {TURNSTILE_SITE_KEY && (
+        <Script
+          src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
+          strategy="lazyOnload"
+          onReady={() => setIsTurnstileLoaded(true)}
+        />
+      )}
       <div className="mx-auto max-w-7xl px-6 py-32">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-24">
           <AnimatedSection>
@@ -128,6 +186,22 @@ export function ContactSection() {
                 />
               </div>
 
+              {/* ハニーポット: 人間には表示しない */}
+              <div aria-hidden="true" className="absolute -left-[9999px] h-0 w-0 overflow-hidden">
+                <label htmlFor="website">Website</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                />
+              </div>
+
+              {TURNSTILE_SITE_KEY && <div ref={turnstileContainerRef} />}
+
               {submitStatus === 'success' && (
                 <div className="rounded-xl bg-teal-50 p-4 text-sm text-teal-700">
                   送信が完了しました。ありがとうございます。
@@ -140,10 +214,22 @@ export function ContactSection() {
                 </div>
               )}
 
+              {submitStatus === 'rateLimited' && (
+                <div className="rounded-xl bg-red-50 p-4 text-sm text-red-700">
+                  送信回数が多すぎます。しばらく時間をおいてからお試しください。
+                </div>
+              )}
+
+              {submitStatus === 'captcha' && (
+                <div className="rounded-xl bg-red-50 p-4 text-sm text-red-700">
+                  認証に失敗しました。もう一度認証してから送信してください。
+                </div>
+              )}
+
               <Button
                 type="submit"
                 data-hover
-                disabled={isSubmitting}
+                disabled={isSubmitting || (!!TURNSTILE_SITE_KEY && !turnstileToken)}
                 className="h-14 w-full rounded-xl bg-[#0a1a1f] text-base font-medium text-white transition-transform hover:scale-[1.02] hover:bg-[#0a1a1f]/90 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? '送信中...' : t(tKeys.contact.form.submit)}
